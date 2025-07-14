@@ -17,6 +17,16 @@ import OurCourses from "./admin/OurCourses";
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
   const admin = JSON.parse(localStorage.getItem("admin"));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("https://courseappp-backend.onrender.com"); // ✅ Replace with your actual backend URL
+    }, 10 * 60 * 1000); // Every 10 minutes
+
+    return () => clearInterval(interval); // Clean up interval on unmount
+  }, []);
+
+
   return (
     <div>
       <Routes>
