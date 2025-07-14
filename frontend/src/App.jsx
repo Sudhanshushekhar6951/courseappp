@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
@@ -13,7 +13,6 @@ import Dashboard from "./admin/Dashboard";
 import CourseCreate from "./admin/CourseCreate";
 import UpdateCourse from "./admin/UpdateCourse";
 import OurCourses from "./admin/OurCourses";
-import React, { useEffect } from "react";
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
   const admin = JSON.parse(localStorage.getItem("admin"));
